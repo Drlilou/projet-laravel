@@ -1,0 +1,146 @@
+<?php
+
+use App\Ensignaint;
+
+return [
+
+
+    "nom" => 'name',
+    "afiche_invetation" => 'Afficher les invitations',
+    "afich_etudiants" => 'Etudiants',
+    "votre_invetation" => 'Votre invitation ',
+    "envoyer_ivetation" => 'envoyer ivetation',
+
+    "expediteur" => 'Expediteur ',
+    "refuser" => 'Refuser',
+    "Invitation not exist" => 'Invitation not exist!!!!',
+    "Invitation deleted successfully" => 'Invitation deleted successfully!!!!',
+    "pfe not exist" => 'Pfe not exist!!!!',
+    "pfe deleted successfully" => 'Pfe deleted successfully!!!!',
+    "annuler" => 'Annuler',
+
+
+
+    "afiche_theme" => 'Afiche liste des thèmes',
+    "choisir" => 'Choisir',
+    "your choix send successfully" => 'votre choix envoie avec succès',
+    "meschoix" => 'Mes choix',
+    "intitule" => 'Titre',
+    "plan" => 'Plan',
+    "ref" => 'Réf',
+    "details" => 'Details',
+
+
+
+    "fname_teacher" => 'Nom professeur',
+    "lname_teacher" => 'Prenom professeur',
+    "fname_student" => 'Nom étudiant',
+    "lname_student" => 'Prenom étudiant',
+
+
+
+    "Are you sure" => 'Êtes-vous sûr!',
+    "invitation send successfully" => 'Invitation envoyée avec succès ',
+    "id" => "Id",
+    "name" => "Nom",
+    "operation" => "opération",
+    "edit" => "modifier",
+    "dellet" => "supprimer",
+    "Candidat deleted successfully" => "Candidat supprimé avec succès",
+    "details" => "détails",
+
+
+
+    "consulter_les_candidat" => "list des candidat",
+    "add_teacher" => "ajouter un enseignant",
+    "add_student" => "ajouter un étudiant",
+    "fname" => "nom",
+    "lname" => "prénom",
+    "fnamebinom" => "nom binom",
+    "lnamebinom" => "prénom binom",
+    "dellet" => "supprimer",
+    "accepter_ivetation" => "accepter l'invitation ",
+    "the theme has been successfully assigned" => "le thème a été affecté avec succès",
+    "your_pfe" => "votre pfes",
+    "add_soutenance" => "ajouter soutenance",
+    "creat_soutenance" => "ajouter une soutenance",
+    "create_soutenance" => "creé soutenance",
+    "apdate_soutenance" => "apdate soutenance",
+
+
+
+    "add_teacher" => "ajouter un enseignant",
+    "add_student" => "ajouter un étudiant",
+    "fname" => "nom",
+    "lname" => "prénom",
+    "fnamebinom" => "nom binom",
+    "lnamebinom" => "prénom binom",
+    "dellet" => "supprimer",
+    "accepter_ivetation" => "accepter ivetation",
+    "le thème a été attribué avec succès" => "le thème a été affecté avec succès",
+    "votre_pfe" => "votre pfes",
+    "add_soutenance" => "ajouter soutenance",
+    "creat_soutenance" => "ajouter une soutenance",
+/***********************/
+
+    "juries must be different" => "les jurys  doit être différent",
+    "consulter_les_soutenance" => "consulter les soutenance",
+    "etudiant1" => "nom etudiant1",
+    "etudiant2" => "nom etudiant2",
+    "jury1" => "nom jury1",
+    "jury2" => "nom jury2",
+    "jury3" => "nom jury3",
+    "etudiant1" => "nom etudiant1",
+    "date" => "date",
+    "apdated successfully" => " apdated successfully1111",
+    "votre_soutnouce" => "votre  soutnouce",
+    "add_note_de_soutenance" => "add note de soutenance",
+    "save" => "save",
+    "your_soutenance" => "votre soutenance",
+    "login_link" => "login",
+    "admin_login" => "admin login",
+    "etudiant_login" => "etudiant login",
+    "ensignaint_login" => "ensignaint login",
+    "save.admin.login" => "admin.login",
+    "username" => "username",
+    "save.ensignaint.login" => "ensignaint.login",
+    "save.etudiant.login" => "etudiant.login",
+    "fname_ar" => "prenom arabic",
+    "lname_ar" => "lname_ar",
+    "fname_fr" => "fname_fr",
+    "lname_fr" => "lname_fr",
+    "username" => "username",
+    "email" => "email",
+    "password_confirmation" => "password_confirmation",
+    "Logout" => "Se déconnecter",
+    "student_Register" => "student_Register",
+    "teacher_Register" => "teacher_Register",
+    "student saved successfully" => "student saved successfully",
+    "teacher saved successfully" => "teacher saved successfully",
+    "Soutenance saved successfully" => "Soutenance saved successfully",
+    "langue" => "langue",
+    "add_likn" => "ajoutez",
+    "mon profile" => "mon profile",
+    "accepter" => "Accepte",
+    "accepter" => "Accepte",
+    "liste des condidats" => "liste des condidats",
+    "il nya pas des candidats" => "il n'ya pas des candidats",
+    "the theme has been successfully assigned" => "le thème a été attribué avec succès",
+    "your pfe" => "votre pfe",
+    "your_soutenance" => "votre soutenance",
+    "encour de traitement" => "encour de traitement",
+    "pas encore" => "pas encore",
+    "not final" => "not final",
+    "fname_jury" => "nom de jury ",
+    "lname_jury" => "prenom de jury",
+    "Password" => "Mot de pass",
+    "password" => "Mot de pass",
+    "Teacher1" => "Ensignaint1",
+    "Teacher2" => "Ensignaint2",
+    "Teacher3" => "Ensignaint3",
+    "les  binom" => "liste des  binom",
+    "les binom" => "voir les  binom",
+    "j veux travail monom" => "j veux travail monom",
+
+
+ ];
