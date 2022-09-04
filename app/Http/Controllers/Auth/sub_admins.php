@@ -29,7 +29,14 @@ class sub_admins extends Controller
     }
     public function add_news()
     {
-        return view('sub_admins.add_news');
+        $data=Zone::select('*')
+            ->where('admin',Auth::guard('sub_admins')->user()->id)
+            ->get();
+        $x=Zone::select('id')
+            ->orderBy('id', 'desc')
+            ->where('admin',Auth::guard('sub_admins')->user()->id)
+            ->get();
+        return view('sub_admins.add_news')->with('c',count($x))->with('data',$data);
     }
     protected function create_news(Request $request)
     {
@@ -38,10 +45,9 @@ class sub_admins extends Controller
 
 
 
-        $x=Zone::select('id')
-             ->where('admin',Auth::guard('sub_admins')->user()->id)
-            ->get();
+
         $rules = [
+            'id_zone' => 'required',
             'titre' => 'required',
             'description' => 'required',
             'image' => 'required',
@@ -72,7 +78,7 @@ class sub_admins extends Controller
             'image' =>  $data[0],
             'titre' => $request->titre,
             'description' => $request->description,
-            'id_zone' =>$x[0]->id,
+            'id_zone' => $request->id_zone,
         ]);
         $id =$N->id;
   // return $id;
@@ -88,13 +94,27 @@ class sub_admins extends Controller
         return redirect('/my_news');
 }
     public function my_news()
-    {    $x=Zone::select('id')
-            ->where('admin',Auth::guard('sub_admins')->user()->id)
+    {
+
+        $x=Zone::select('id')
+        ->where('admin',Auth::guard('sub_admins')->user()->id)
             ->get();
+if (count($x)<1)
+{
+    $t=[];
+    return view('sub_admins.my_news')->with('data',$t)->with('paginator',$t)->with('c',count($x));
+
+
+}
+
+
         $t= News::select('*')
-       ->where('id_zone' ,$x[0]->id)
+            ->where('id_zone' ,$x[0]->id)
+            ->orderBy('id', 'desc')
+
             ->paginate(2);
-        return view('sub_admins.my_news')->with('data',$t)->with('paginator',$t);;
+
+        return view('sub_admins.my_news')->with('data',$t)->with('paginator',$t)->with('c',count($x));
     }
     public function delet($id)
     {

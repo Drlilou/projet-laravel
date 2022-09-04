@@ -49,9 +49,8 @@ class HomeController extends Controller
             $x='layouts.app';
         else
             $x='layouts.app';
-
-
         $t= News::select('*')
+            ->orderBy('id', 'desc')
             ->paginate(4);
         return view('news')->with('data',$t)->with('paginator',$t)->with('app',$x);
 

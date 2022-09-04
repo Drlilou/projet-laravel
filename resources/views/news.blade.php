@@ -62,7 +62,13 @@
                             <div class="row">
                                 <div class="col-12 col-sm-4">
                                     <div class="card__cover">
-                                        <img src="{{asset('images/news/'.$user['image'])}}" alt="Image" class="img-fluid">
+                                        <img src="{{asset('images/news/'.$user['image'])}}" alt="Image"
+                                             class="img-fluid"
+                                             style="
+    height: 173px;
+    width: 156px;
+"
+                                        >
                                     </div>
                                 </div>
 

@@ -57,11 +57,13 @@
     </div>
     <br>
     @if(Session::has('success'))
-        <div class="alert alert-success" role="alert">
+        <div role="alert" style="color: #8effbb ;   font-size: 24px;
+">
             {{ Session::get('success') }}
         </div> @endif
-    @if(Session::has('eror'))    <div class="alert alert-success" role="alert">
-        {{ Session::get('eror') }}   </div>
+    @if(Session::has('error'))    <div style="color: #ff6b78;    font-size: 24px;
+" role="alert">
+        {{ Session::get('error') }}   </div>
     @endif
 
     <br>
@@ -110,7 +112,7 @@
                     <td>
 
                         <a  href="{{
-                                route('news.delet',$user['id'])
+                                route('zone.delet',$user['idzone'])
                               }}"class="nav-link"  onclick="return confirm('Etes-vous sûr?');">
                             <button type="button" >
                                 <svg style="color: red" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16">
@@ -121,7 +123,7 @@
 
 
                         <a  href="{{
-                                      route('news.edit',$user['id'])
+                                      route('zone.edit',$user['idzone'])
                                     }}"class="nav-link" >
                             <button type="button" >
                                 <svg style="color:#2086ff" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">

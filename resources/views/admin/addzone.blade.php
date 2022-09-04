@@ -25,7 +25,6 @@
         <form method="POST" class="form"
               action="{{ route('create_zone') }}" enctype="multipart/form-data">
             @csrf
-
             <div class="col-lg-12">
                 <h1 class="page-header"
                     style="color: white"
@@ -37,59 +36,46 @@
 
 
 
-                <div class="col-md-6 form-group">
-                    <input id="fname" type="text" class="form-text" name="fname" value="{{ old('fname') }}"
-                           style="background: #4b4949;color: white"
-                           placeholder="Fname" required >
-                </div>
-                <br><br>
 
-                <div class="col-md-6 form-group">
-                    <input id="lname" type="text" class="form-text" name="lname" value="{{ old('lname') }}"
-                           style="background: #4b4949;color: white"
-                           placeholder="Lname" required >
-                </div>
-                <br><br>
-
-                <div class="col-md-6 form-group">
-                    <input id="username" type="text" class="form-text" name="username" value="{{ old('username') }}"
-                           style="background: #4b4949;color: white"
-                           placeholder="username" required >
-                </div>
-                <br><br>
-                <div class="col-md-6 form-group">
-                    <input id="email" type="text" class="form-text" name="email" value="{{ old('email') }}"
-                           style="background: #4b4949;color: white"
-                           placeholder="email" required >
-                </div>
-                <br><br>
-                <div class="col-md-6 form-group">
+                <div class="col-md-7 form-group">
                     <input id="nom" type="text" class="form-text" name="nom" value="{{ old('nom') }}"
-                           style="background: #4b4949;color: white"
+                           style="background: #4b4949;color: white;
+    width: 287px;
+    height: 43px;
+"
+
                            placeholder="nom" required >
                 </div>
-                <br><br>
-                <div class="col-md-6 form-group">
-                    <input id="password" type="password" class="form-text" name="password"
-                           value="{{ old('password') }}"
-                           style="background: #4b4949;color: white"
-                           placeholder="password" required >
+
+                <br><br><br>
+
+
+                <div class="col-md-7 form-group">
+                    <select
+                    name="admin"
+                    style="background: #4b4949;color: white; width: 287px; height: 43px;"
+                    >
+                        <option value="">choisir un admin de zone</option>
+
+                    @foreach($data as $i)
+                            <option value="{{$i['id']}}">{{$i['fname']}} {{$i['lname']}}</option>
+
+
+                            @endforeach
+
+
+                    </select>
+
+
                 </div>
                 <br><br>
 
-                <div class="col-md-6 form-group">
-                    <input id="password-confirm" type="password" class="form-text"
-                           name="password_confirmation" value="{{ old('password-confirm') }}"
-                           style="background: #4b4949;color: white"
-                           placeholder="password-confirm" required >
+
+                <div class="col-md-7 form-group">
+                    <input type="submit" value="save" class="form__btn">
+
                 </div>
-                <br><br>
 
-
-
-
-
-            <input type="submit" value="save" class="form__btn">
 
         </form>
 @endsection

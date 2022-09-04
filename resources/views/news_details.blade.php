@@ -33,7 +33,13 @@
                             <!-- card cover -->
                             <div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-5">
                                 <div class="card__cover">
-                                    <img src="{{asset('images/news/'.$data['image'])}}" alt="Image" class="img-fluid">
+                                    <img src="{{asset('images/news/'.$data['image'])}}"
+                                         alt="Image" class="img-fluid"
+                                         style="
+    height: 173px;
+    width: 156px;
+"
+                                    >
                                 </div>
                             </div>
                             <!-- end card cover -->
@@ -189,7 +195,13 @@
                                  @foreach ($photos as $photo)
                                     <figure class="col-12 col-sm-6 col-xl-4" itemprop="associatedMedia" itemscope>
                                         <a href="img/gallery/project-1.jpg" itemprop="contentUrl" data-size="1920x1280">
-                                            <img src="{{asset('images/news/'.$photo['img'])}}" itemprop="thumbnail" alt="Image description" />
+                                            <img src="{{asset('images/news/'.$photo['img'])}}"
+                                                 itemprop="thumbnail" alt="Image description"
+                                                 style="
+    height: 290px;
+    width: 221px;
+"
+                                            />
 
                                         </a>
                                         <figcaption itemprop="caption description">Some image caption 1</figcaption>

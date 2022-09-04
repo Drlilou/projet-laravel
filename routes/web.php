@@ -12,8 +12,17 @@ Route::get('logout', 'Auth\LoginController@logout');
 Route::group(['middleware' => 'auth:admin','namespace' => 'Auth'], function (){
     Route::get('admin', 'CustomAuthController@admin')-> name('admin');
     Route::get('consulter_les_zones/','admin@consulter_les_zones')->name('consulter_les_zones');
+    Route::get('consulter_les_sub_admins/','admin@consulter_les_sub_admins')->name('consulter_les_sub_admins');
     Route::get('add_zone/','admin@addzoneforme')->name('add_zone');
     Route::post('admin/create_zone/','admin@create_zone')->name('create_zone');
+    Route::get('add_sub_admin/','admin@addsub_adminforme')->name('add_sub_admin');
+    Route::post('admin/create_sub_admin/','admin@create_sub_admin')->name('create_sub_admin');
+    Route::get('/zone_delet/{id}', 'admin@delet')->name('zone.delet');
+    Route::get('/zone_edit/{id}', 'admin@edit')->name('zone.edit');
+    Route::get('/sub_admins_imp/{id}', 'admin@sub_admins_imp')->name('sub_admins.imp');
+    Route::post('/zone_apdate/{id}', 'admin@apdate')->name('zone.apdate');
+    Route::get('/sub_admins/{id}', 'admin@sub_adminsdelet')->name('sub_admins.delet');
+
 });
 Route::group(['middleware' => 'auth:sub_admins','namespace' => 'Auth'], function (){
     Route::get('my_news/','sub_admins@my_news')->name('my_news');
@@ -22,6 +31,10 @@ Route::group(['middleware' => 'auth:sub_admins','namespace' => 'Auth'], function
     Route::get('/news_delet/{id}', 'sub_admins@delet')->name('news.delet');
     Route::get('/news_edit/{id}', 'sub_admins@edit')->name('news.edit');
     Route::post('/news_apdate/{id}', 'sub_admins@apdate')->name('news.apdate');
+
+
+
+
     Route::get('sub_admins', 'CustomAuthController@sub_admins')-> name('sub_admins');
 });
 Route::group(['middleware' => 'auth:web'], function (){

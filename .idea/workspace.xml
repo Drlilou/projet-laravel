@@ -14,25 +14,6 @@
       <executable />
     </execution>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>afich_theme</find>
-      <find>annuler_choix</find>
-      <find>choisir</find>
-      <find>details</find>
-      <find>meschoix</find>
-      <find>ann</find>
-      <find>App\Http\Controllers\Auth;</find>
-      <find>your_pfe</find>
-      <find>create</find>
-      <find>afich</find>
-      <find>dell</find>
-      <find>edit</find>
-      <find>votre_soutnouce</find>
-      <find>add</find>
-      <find>afi</find>
-    </findStrings>
-  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
@@ -142,18 +123,18 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Modritch\Desktop\laravel\theme - Copie (2)\resources\views\admin" />
+      <recent name="C:\Users\Modritch\Desktop\laravel\theme - Copie (2)\public" />
+      <recent name="C:\Users\Modritch\Desktop\laravel\theme - Copie (2)\resources\views" />
+      <recent name="C:\Users\Modritch\Desktop\laravel\theme - Copie (2)\resources\views\auth\passwords" />
+      <recent name="C:\Users\Modritch\Desktop\laravel\theme - Copie (2)\app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Modritch\Desktop\laravel\theme - Copie (2)\7" />
       <recent name="C:\Users\Modritch\Desktop\laravel\theme - Copie (2)\public" />
       <recent name="C:\Users\Modritch\Desktop\theme\app\Http\Controllers\Auth" />
       <recent name="C:\Users\Modritch\Desktop\theme\resources\views\admin" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Modritch\Desktop\laravel\theme - Copie (2)\resources\views\admin" />
-      <recent name="C:\Users\Modritch\Desktop\laravel\theme - Copie (2)\resources\views" />
-      <recent name="C:\Users\Modritch\Desktop\laravel\theme - Copie (2)\resources\views\auth\passwords" />
-      <recent name="C:\Users\Modritch\Desktop\laravel\theme - Copie (2)\public" />
-      <recent name="C:\Users\Modritch\Desktop\laravel\theme - Copie (2)\app" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -231,7 +212,9 @@
       <workItem from="1661549212088" duration="1066000" />
       <workItem from="1661723682445" duration="6490000" />
       <workItem from="1661806508859" duration="28117000" />
-      <workItem from="1661951565348" duration="34433000" />
+      <workItem from="1661951565348" duration="35030000" />
+      <workItem from="1662049815195" duration="27220000" />
+      <workItem from="1662282244685" duration="329000" />
     </task>
     <servers />
   </component>
@@ -307,7 +290,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/layouts/app.blade.php</url>
-          <line>79</line>
+          <line>122</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -326,28 +309,13 @@
           <option name="timeStamp" value="36" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/auth/login.blade.php</url>
-          <line>45</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/auth/login.blade.php</url>
-          <line>46</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/auth/login.blade.php</url>
-          <line>47</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/news_details.blade.php</url>
-          <line>58</line>
+          <line>64</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/sub_admins/my_news.blade.php</url>
-          <line>56</line>
+          <line>191</line>
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -362,12 +330,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php</url>
-          <line>171</line>
+          <line>170</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php</url>
-          <line>176</line>
+          <line>175</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -377,18 +345,70 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/Auth/Admin.php</url>
-          <line>50</line>
+          <line>62</line>
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/admin/zones.blade.php</url>
-          <line>60</line>
+          <line>61</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/news_details.blade.php</url>
-          <line>118</line>
+          <line>124</line>
           <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/admin/addzone.blade.php</url>
+          <line>39</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/admin/addzone.blade.php</url>
+          <line>27</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/sub_admins/my_news.blade.php</url>
+          <line>163</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/sub_admins/add_news.blade.php</url>
+          <line>59</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/routes/web.php</url>
+          <line>25</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/Auth/Admin.php</url>
+          <line>35</line>
+          <properties>
+            <option name="className" value="\App\Http\Controllers\Auth\Admin" />
+            <option name="methodName" value="consulter_les_zones" />
+          </properties>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/Auth/sub_admins.php</url>
+          <line>95</line>
+          <properties>
+            <option name="className" value="\App\Http\Controllers\Auth\sub_admins" />
+            <option name="methodName" value="my_news" />
+          </properties>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/Auth/Admin.php</url>
+          <line>154</line>
+          <properties>
+            <option name="className" value="\App\Http\Controllers\Auth\Admin" />
+            <option name="methodName" value="sub_adminsdelet" />
+          </properties>
+          <option name="timeStamp" value="76" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

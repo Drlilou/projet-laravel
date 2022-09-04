@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 01 sep. 2022 à 11:23
+-- Généré le : Dim 04 sep. 2022 à 11:14
 -- Version du serveur :  10.4.14-MariaDB
 -- Version de PHP : 7.2.33
 
@@ -61,16 +61,6 @@ CREATE TABLE `comments` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Déchargement des données de la table `comments`
---
-
-INSERT INTO `comments` (`id`, `content`, `user`, `news`, `created_at`, `updated_at`) VALUES
-(4, 'qkfhqs snkqlfnhlezs fhslegjqleqrj lnsqkdgnme', 4, 2, '2022-08-30 21:33:39', '2022-08-30 21:33:39'),
-(10, 'sssssssssssssss', 4, 2, '2022-08-31 16:42:58', '2022-08-31 16:42:58'),
-(11, 'atyaztyzhdt', 4, 10, '2022-09-01 07:03:05', '2022-09-01 07:03:05'),
-(12, 'fgzdgzsqjhu', 4, 20, '2022-09-01 07:13:57', '2022-09-01 07:13:57');
 
 -- --------------------------------------------------------
 
@@ -155,29 +145,6 @@ CREATE TABLE `news` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Déchargement des données de la table `news`
---
-
-INSERT INTO `news` (`id`, `titre`, `image`, `description`, `id_zone`, `created_at`, `updated_at`) VALUES
-(2, '654465465447', '1661964828.jpg', '654654', 2, '2022-08-22 12:04:43', '2022-08-31 14:54:47'),
-(3, '+6qishfkqjzeshflk skjfjhflskg', '1661177191.jpg', '654654', 2, '2022-08-22 12:06:31', '2022-08-23 15:29:22'),
-(4, '324654', '1661192637.jpg', 'zsf', 2, '2022-08-22 16:23:57', '2022-08-22 16:23:57'),
-(7, 'zzzej c', '1661810959.jpg', '86974d56sd4fk5454   skgfcksue lhfshflzheili  c zeKFZAE FQ S. F z fKLQSJFLHzaebx', 2, '2022-08-29 20:09:19', '2022-08-29 20:09:19'),
-(8, 'zzzej c', '1661811038.jpg', '86974d56sd4fk5454   skgfcksue lhfshflzheili  c zeKFZAE FQ S. F z fKLQSJFLHzaebx', 2, '2022-08-29 20:10:38', '2022-08-29 20:10:38'),
-(9, 'zzzej c', '1661811080.jpg', '86974d56sd4fk5454   skgfcksue lhfshflzheili  c zeKFZAE FQ S. F z fKLQSJFLHzaebx', 2, '2022-08-29 20:11:20', '2022-08-29 20:11:20'),
-(10, 'zzzej c', '1661811113.jpg', '86974d56sd4fk5454   skgfcksue lhfshflzheili  c zeKFZAE FQ S. F z fKLQSJFLHzaebx', 2, '2022-08-29 20:11:53', '2022-08-29 20:11:53'),
-(11, 'zzzej c', '1661811119.jpg', '86974d56sd4fk5454   skgfcksue lhfshflzheili  c zeKFZAE FQ S. F z fKLQSJFLHzaebx', 2, '2022-08-29 20:11:59', '2022-08-29 20:11:59'),
-(12, 'AAA', '1661951868.png', 'AAAAAA', 2, '2022-08-31 11:17:48', '2022-08-31 11:17:48'),
-(13, 'aZ', '1661952741.jpg', 'zzzzzz', 2, '2022-08-31 11:32:21', '2022-08-31 11:32:21'),
-(14, '7777777777', '11661953001.jpg', '8888888888888', 2, '2022-08-31 11:36:41', '2022-08-31 11:36:41'),
-(15, 'aaaaaaaaa', '11661953099.jpg', 'aaaaaaaaaa', 2, '2022-08-31 11:38:19', '2022-08-31 11:38:19'),
-(16, 'aaaaaaaaa', '11661953155.jpg', 'aaaaaaaaaa', 2, '2022-08-31 11:39:15', '2022-08-31 11:39:15'),
-(17, 'aaaaaaaaaaaaa²', '11661959758.jpg', 'zsfdosfdj7\r\n7gsdwjhdffs\r\nwg\r\nsd\r\nhsùd\r\nfhùs', 2, '2022-08-31 13:29:18', '2022-08-31 13:29:18'),
-(18, '545454', '11661959843.jpg', 'kjhkh\r\ndsfghjklmqsdfghjklmù\r\ndgfhjklmù', 2, '2022-08-31 13:30:43', '2022-08-31 13:30:43'),
-(19, '65446545', '11661964308.jpg', '578444444444', 2, '2022-08-31 14:45:08', '2022-08-31 14:45:08'),
-(20, 'zzzzzzzzzzzzz', '11662023530.jpg', 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee', 2, '2022-09-01 07:12:10', '2022-09-01 07:12:10');
-
 -- --------------------------------------------------------
 
 --
@@ -204,45 +171,6 @@ CREATE TABLE `photos` (
   `news` bigint(20) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Déchargement des données de la table `photos`
---
-
-INSERT INTO `photos` (`id`, `created_at`, `updated_at`, `img`, `news`) VALUES
-(1, '2022-08-31 11:36:41', '2022-08-31 11:36:41', '11661953001.jpg', 14),
-(2, '2022-08-31 11:39:15', '2022-08-31 11:39:15', '11661953155.jpg', 16),
-(3, '2022-08-31 11:39:15', '2022-08-31 11:39:15', '21661953155.jpg', 16),
-(4, '2022-08-31 11:39:15', '2022-08-31 11:39:15', '31661953155.jpg', 16),
-(5, '2022-08-31 11:39:15', '2022-08-31 11:39:15', '41661953155.png', 16),
-(6, '2022-08-31 11:39:15', '2022-08-31 11:39:15', '51661953155.png', 16),
-(7, '2022-08-31 11:39:15', '2022-08-31 11:39:15', '61661953155.png', 16),
-(8, '2022-08-31 11:39:15', '2022-08-31 11:39:15', '71661953155.jpg', 16),
-(9, '2022-08-31 11:39:15', '2022-08-31 11:39:15', '81661953155.jpg', 16),
-(10, '2022-08-31 11:39:15', '2022-08-31 11:39:15', '91661953155.jpg', 16),
-(11, '2022-08-31 11:39:15', '2022-08-31 11:39:15', '101661953155.jpg', 16),
-(12, '2022-08-31 11:39:15', '2022-08-31 11:39:15', '111661953155.png', 16),
-(13, '2022-08-31 11:39:15', '2022-08-31 11:39:15', '121661953155.png', 16),
-(14, '2022-08-31 13:29:18', '2022-08-31 13:29:18', '11661959758.jpg', 17),
-(15, '2022-08-31 13:29:18', '2022-08-31 13:29:18', '21661959758.jpg', 17),
-(16, '2022-08-31 13:29:18', '2022-08-31 13:29:18', '31661959758.jpg', 17),
-(17, '2022-08-31 13:30:43', '2022-08-31 13:30:43', '11661959843.jpg', 18),
-(18, '2022-08-31 13:30:43', '2022-08-31 13:30:43', '21661959843.jpg', 18),
-(19, '2022-08-31 13:30:43', '2022-08-31 13:30:43', '31661959843.jpg', 18),
-(20, '2022-08-31 14:45:08', '2022-08-31 14:45:08', '11661964308.jpg', 19),
-(21, '2022-08-31 14:45:08', '2022-08-31 14:45:08', '21661964308.jpg', 19),
-(22, '2022-08-31 14:45:08', '2022-08-31 14:45:08', '31661964308.jpg', 19),
-(23, '2022-09-01 07:12:10', '2022-09-01 07:12:10', '11662023530.jpg', 20),
-(24, '2022-09-01 07:12:10', '2022-09-01 07:12:10', '21662023530.jpg', 20),
-(25, '2022-09-01 07:12:10', '2022-09-01 07:12:10', '31662023530.jpg', 20),
-(26, '2022-09-01 07:12:10', '2022-09-01 07:12:10', '41662023530.jpg', 20),
-(27, '2022-09-01 07:12:10', '2022-09-01 07:12:10', '51662023530.jpg', 20),
-(28, '2022-09-01 07:12:10', '2022-09-01 07:12:10', '61662023530.jpg', 20),
-(29, '2022-09-01 07:12:10', '2022-09-01 07:12:10', '71662023530.jpg', 20),
-(30, '2022-09-01 07:12:10', '2022-09-01 07:12:10', '81662023530.jpg', 20),
-(31, '2022-09-01 07:12:10', '2022-09-01 07:12:10', '91662023530.jpg', 20),
-(32, '2022-09-01 07:12:10', '2022-09-01 07:12:10', '101662023530.jpg', 20),
-(33, '2022-09-01 07:12:10', '2022-09-01 07:12:10', '111662023530.jpg', 20);
-
 -- --------------------------------------------------------
 
 --
@@ -267,8 +195,6 @@ CREATE TABLE `sub_admins` (
 --
 
 INSERT INTO `sub_admins` (`id`, `fname`, `lname`, `email`, `username`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(7, '8987987', '6857468746', '6545465@gmail.com', '854655', NULL, '$2y$10$Ls3h3o7JUXQqDelze10FPeJ1.dhce8DHwaYrfgqdDtrjQfRZrs2HG', NULL, '2022-08-18 21:17:14', '2022-08-18 21:17:14'),
-(8, '8987987', '6857468746', 'a@gmail.com', 'a', NULL, '$2y$10$kedytJReTysRYSLLB.YtkOT8NrsUOU4hwESwUGWxayFc0PAeTBu4.', NULL, '2022-08-18 21:22:27', '2022-08-31 18:42:46'),
 (9, 'e', 'e', 'e8@gmail.com', 'e', NULL, '$2y$10$cC9UNrr9it/oLT5l/xN14OqnBOZ.VZRr540nzcp5xpjfgZkx2ixqm', NULL, '2022-08-31 20:44:58', '2022-08-31 20:44:58'),
 (10, 'f', 'f', 'ffff@gmail.com', 'f', NULL, '$2y$10$iMIOmB.GkaDdQV.iBegloO4yAOZLW8vgKpmz8ML2eRTTqZn1iR1QO', NULL, '2022-08-31 20:47:04', '2022-08-31 20:47:04');
 
@@ -317,16 +243,6 @@ CREATE TABLE `zones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Déchargement des données de la table `zones`
---
-
-INSERT INTO `zones` (`id`, `nom`, `admin`, `created_at`, `updated_at`) VALUES
-(1, '4658465846', 7, '2022-08-18 21:21:12', '2022-08-18 21:21:12'),
-(2, '4658465846', 8, '2022-08-18 21:22:27', '2022-08-18 21:22:27'),
-(3, 'e', 9, '2022-08-31 20:44:58', '2022-08-31 20:44:58'),
-(4, 'f', 10, '2022-08-31 20:47:04', '2022-08-31 20:47:04');
-
---
 -- Index pour les tables déchargées
 --
 
@@ -343,8 +259,8 @@ ALTER TABLE `admins`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `comments_user_foreign` (`user`),
-  ADD KEY `comments_news_foreign` (`news`);
+  ADD KEY `comments_news_foreign` (`news`),
+  ADD KEY `comments_user_foreign` (`user`);
 
 --
 -- Index pour la table `etudiants`
@@ -448,19 +364,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT pour la table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT pour la table `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT pour la table `sub_admins`
 --
 ALTER TABLE `sub_admins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `users`
@@ -472,7 +388,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `zones`
 --
 ALTER TABLE `zones`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Contraintes pour les tables déchargées
@@ -482,8 +398,8 @@ ALTER TABLE `zones`
 -- Contraintes pour la table `comments`
 --
 ALTER TABLE `comments`
-  ADD CONSTRAINT `comments_news_foreign` FOREIGN KEY (`news`) REFERENCES `news` (`id`),
-  ADD CONSTRAINT `comments_user_foreign` FOREIGN KEY (`user`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `comments_news_foreign` FOREIGN KEY (`news`) REFERENCES `news` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `comments_user_foreign` FOREIGN KEY (`user`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `etudiants`
@@ -495,19 +411,19 @@ ALTER TABLE `etudiants`
 -- Contraintes pour la table `news`
 --
 ALTER TABLE `news`
-  ADD CONSTRAINT `news_id_zone_foreign` FOREIGN KEY (`id_zone`) REFERENCES `zones` (`id`);
+  ADD CONSTRAINT `news_id_zone_foreign` FOREIGN KEY (`id_zone`) REFERENCES `zones` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `photos`
 --
 ALTER TABLE `photos`
-  ADD CONSTRAINT `photos_news_foreign` FOREIGN KEY (`news`) REFERENCES `news` (`id`);
+  ADD CONSTRAINT `photos_news_foreign` FOREIGN KEY (`news`) REFERENCES `news` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `zones`
 --
 ALTER TABLE `zones`
-  ADD CONSTRAINT `zones_admin_foreign` FOREIGN KEY (`admin`) REFERENCES `sub_admins` (`id`);
+  ADD CONSTRAINT `zones_admin_foreign` FOREIGN KEY (`admin`) REFERENCES `sub_admins` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -51,7 +51,50 @@
 
 
      <style>
-         .card__title{
+
+
+         input {
+             -webkit-appearance: none;
+             -moz-appearance: none;
+             appearance: none;
+
+             border-radius: 50%;
+             width: 16px;
+             height: 16px;
+
+             border: 2px solid #999;
+             transition: 0.2s all linear;
+             margin-right: 5px;
+
+             position: relative;
+             top: 4px;
+         }
+
+         input:checked {
+             border: 6px solid #ff5860;
+         }
+span{
+    font-size: 22px;
+}
+         .sign__text {
+             margin-top: 20px;
+             font-size: 26px;
+             color: rgba(255,255,255,0.5);
+             font-family: 'Open Sans', sans-serif;
+         }
+         input[type=radio] {
+             width: 7%;
+             height: 1.5em;
+         }
+
+         .sign__group1 {
+             position: relative;
+             margin-bottom: 20px;
+             width: -webkit-fill-available;
+         }
+         .sign__input {
+
+             font-size: 27px;
 
          }
      </style>

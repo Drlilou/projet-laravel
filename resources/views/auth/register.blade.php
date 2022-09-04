@@ -2,7 +2,11 @@
 
 @section('content')
 
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="sign section--bg" data-bg="img/section/section.jpg">
     <div class="container">
         <div class="row">
@@ -14,13 +18,16 @@
                             @csrf
 
 
-
                         <div class="sign__group">
                             <input id="email" type="email" class="sign__input @error('email')
-                                is-invalid @enderror" name="email" value="{{ old('email') }}"
+                                is-invalid @enderror" name="email"
                                    required autocomplete="email"
                                    placeholder="email"
-                                   autofocus>
+                                   autofocus
+                                   style=" width: max-content; "
+
+
+                            >
                             @error('email')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -28,10 +35,12 @@
                             @enderror                            </div>
                         <div class="sign__group">
                             <input id="lname" type="text" class="sign__input @error('lname')
-                                is-invalid @enderror" name="lname" value="{{ old('lname') }}"
+                                is-invalid @enderror" name="lname"
                                    required autocomplete="lname"
                                    placeholder="lname"
-                                   autofocus>
+                                   autofocus
+                                   style=" width: max-content; "
+                            >
                             @error('lname')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -40,10 +49,13 @@
 
                         <div class="sign__group">
                             <input id="fname" type="text" class="sign__input @error('fname')
-                                is-invalid @enderror" name="fname" value="{{ old('fname') }}"
+                                is-invalid @enderror" name="fname"
                                    required autocomplete="fname"
                                    placeholder="fname"
-                                   autofocus>
+                                   autofocus
+                                   style=" width: max-content; "
+                            >
+
                             @error('fname')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -51,10 +63,13 @@
                             @enderror                            </div>
                         <div class="sign__group">
                             <input id="username" type="text" class="sign__input @error('username')
-                                is-invalid @enderror" name="username" value="{{ old('username') }}"
+                                is-invalid @enderror" name="username"
                                    required autocomplete="username"
-                                   placeholder="username}"
-                                   autofocus>
+                                   placeholder="username"
+                                   autofocus
+                                   style=" width: max-content; "
+
+                            >
                             @error('username')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -64,7 +79,10 @@
                         <div class="sign__group">
                             <input id="password" type="password" class="sign__input @error('password')
                                 is-invalid @enderror" name="password" required autocomplete="current-password"
-                                   placeholder="{{ __('messages.Password') }}">
+                                   placeholder="{{ __('messages.Password') }}"
+
+                                   style=" width: max-content; "
+                            >
 
                             @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -74,7 +92,10 @@
                         <div class="sign__group">
                             <input id="password" type="password" class="sign__input @error('password')
                                 is-invalid @enderror"name="password_confirmation" required autocomplete="new-password"
-                                   placeholder="password_confirm">
+                                   placeholder="password_confirm"
+                                   style=" width: max-content; "
+
+                            >
 
                             @error('password_confirm')
                             <span class="invalid-feedback" role="alert">

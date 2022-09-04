@@ -1,11 +1,10 @@
-{{--@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title')login
 
 @endsection
 @section('content')
 
---}}
     <div class="sign section--bg" data-bg="img/section/section.jpg">
         <div class="container">
             <div class="row">
@@ -21,7 +20,11 @@
                                     is-invalid @enderror" name="username" value="{{ old('username') }}"
                                        required autocomplete="username"
                                        placeholder="{{ __('messages.username') }}"
-                                       autofocus>
+                                       autofocus
+                                       style="
+    width: max-content;
+"
+                                >
                                 @error('username')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -31,17 +34,15 @@
                             <div class="sign__group">
                                 <input id="password" type="password" class="sign__input @error('password')
                                     is-invalid @enderror" name="password" required autocomplete="current-password"
-                                       placeholder="{{ __('messages.Password') }}">
+                                       placeholder="{{ __('messages.Password') }}"
+
+                                       style="
+    width: max-content;
+">
 
                                 @error('password')                            </div>
 
-                            <div class="sign__group sign__group--checkbox">
-                                <input id="remember" name="remember" type="checkbox" checked="checked">
-                                <label for="remember">Remember Me</label>
 
-
-
-                            </div>
 
                             <div class="col-md-8 form-group">
                             </div>
@@ -60,15 +61,21 @@
 
 
 
-
-
-                            admin
+                            <div class="sign__group sign__group1 ">
                                 <input type="radio" name="type" class="" value="admin" checked>
-                            sub_admin
+                                <span class="sign__text">    admin</span>
+
                                 <input type="radio" name="type" class="" value="sub_admin">
-                            user
+
+                                <span class="sign__text">    sub_admin</span>
+
 
                                 <input type="radio" name="type" class="" value="user">
+                                <span class="sign__text">    user</span>
+
+                            </div>
+
+
 
                             <button class="sign__btn" type="submit" >Sign in</button>
 
@@ -83,7 +90,7 @@
             </div>
         </div>
     </div>
-{{--
-@endsection--}}
+
+@endsection
 
 

@@ -126,7 +126,14 @@
                                  <a  href="{{ route('add_zone') }}"  class="header__nav-link">add_zone</a>
                              </li>
                              <li class="header__nav-item">
+                                 <a  href="{{ route('add_sub_admin') }}"  class="header__nav-link">add sub admin</a>
+                             </li>
+                             <li class="header__nav-item">
                                  <a href="{{ route('consulter_les_zones') }}"  class="header__nav-link">consulter les zones</a>
+                             </li>
+
+                             <li class="header__nav-item">
+                                 <a href="{{ route('consulter_les_sub_admins') }}"  class="header__nav-link">SUB admins</a>
                              </li>
 
 
