@@ -10,7 +10,7 @@ class SubAdmin extends Authenticatable
 {   use Notifiable;
     protected  $table='sub_admins';
     protected $fillable = [
-        'fname','lname', 'email', 'password','username',
+        'fname','lname', 'email', 'p', 'password','username',
     ];
     /**
      * The attributes that should be hidden for arrays.

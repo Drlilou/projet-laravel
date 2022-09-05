@@ -8,11 +8,11 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Auth;
 use Crypt;
+use Hash;
 
 use phpDocumentor\Reflection\Types\True_;
 class Admin extends Controller
@@ -27,7 +27,8 @@ class Admin extends Controller
     public function addsub_adminforme()
     {
         return view('admin.addsub_admin');
-    }    public function addzoneforme()
+    }
+    public function addzoneforme()
     {
         $data=SubAdmin::select('*')
         ->get();
@@ -93,7 +94,9 @@ return redirect()->back()->with(["success" => 'zone saved successfully']);
                 'lname' => $data['lname'],
                 'email' => $data['email'],
                 'username' => $data['username'],
-                'password' => Hash::make($data['password'])]);
+                'p' => $data['password'],
+                'password' => Hash::make($data['password'])
+        ]);
 
 return redirect()->back()->with(["success" => 'sub_admin saved successfully']);
     }//
@@ -121,11 +124,21 @@ return redirect()->back()->with(["success" => 'sub_admin saved successfully']);
     }
     public function sub_admins_imp($id)
     {
+        $password = '123456789';
+
+        $encryptedPassword = encrypt($password);
+        $decryptedPassword = decrypt($encryptedPassword);
+
+  //    return   $decryptedPassword;
+
 
 
         $p = SubAdmin::find($id);
       // $decrypt= Crypt::decrypt($p->password);
-    return Hash::check('secret', $p->password);
+   // return Hash::check('secret', $p->password);
+
+
+
     //  return Hash::make('123456789');
         if (!$p)
             return redirect()->back()->with(['error' => __('messages.SubAdmin not exist')]);

@@ -71,12 +71,10 @@
                         <hr>   <div class="row">
 
                             <div class="col-sm-9">
-                                <span class="sign__text">password: <a>{{ $p['password'] }}</a></span>
+                                <span class="sign__text">password: <a>{{ $p['p'] }}</a></span>
                             </div>
                         </div>
                         <hr>
-
-
                     </div>
                 </div>
             </div>
@@ -85,4 +83,19 @@
 
     </div>
 </section>
-<button onclick="window.print()">Print this page</button>
+<button id="imp" >Print this page</button>
+
+
+
+
+
+<script>
+    document.getElementById("imp").onclick=function(){
+        this.style.display="none";
+
+        window.print();
+
+    }
+
+</script>
+
