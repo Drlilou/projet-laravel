@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 05 sep. 2022 à 11:33
--- Version du serveur :  10.4.14-MariaDB
--- Version de PHP : 7.2.33
+-- Généré le : mer. 28 sep. 2022 à 23:08
+-- Version du serveur : 10.4.22-MariaDB
+-- Version de PHP : 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `fname`, `lname`, `email`, `username`, `password`, `is_super`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin', 'admin@gmail.com', 'admin', '$2y$10$sg9.Tr6aO.zDAO88PR2TVeJP4dWVyoaMIOyAKOx7vZjzguuTndE1u', 0, NULL, NULL, '2022-09-04 16:04:45');
+(1, 'admin', 'admin', 'admin@gmail.com', 'admin', '$2y$10$MoLKshn9bDKvG4QyzvG.7usbXVOU616pmEMoXJM2GaIdd8u6TxAo2', 0, NULL, NULL, '2022-09-04 16:04:45');
 
 -- --------------------------------------------------------
 
@@ -196,8 +196,8 @@ CREATE TABLE `sub_admins` (
 --
 
 INSERT INTO `sub_admins` (`id`, `fname`, `lname`, `email`, `username`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `p`) VALUES
-(9, 'e', 'e', 'e8@gmail.com', 'e', NULL, '$2y$10$a3J8FWA1p3EQkuIiyqS4h.mJBBUiJ9OjQsw0alBPFAvZSMyFrDs2O', NULL, '2022-08-31 20:44:58', '2022-09-04 16:08:34', '123123123'),
-(10, 'f', 'f', 'ffff@gmail.com', 'f', NULL, '$2y$10$iMIOmB.GkaDdQV.iBegloO4yAOZLW8vgKpmz8ML2eRTTqZn1iR1QO', NULL, '2022-08-31 20:47:04', '2022-08-31 20:47:04', '123456789');
+(9, 'e', 'e', 'e8@gmail.com', 'e', NULL, '$2y$10$MoLKshn9bDKvG4QyzvG.7usbXVOU616pmEMoXJM2GaIdd8u6TxAo2', NULL, '2022-08-31 20:44:58', '2022-09-04 16:08:34', '123123123'),
+(10, 'f', 'f', 'ffff@gmail.com', 'f', NULL, '$2y$10$MoLKshn9bDKvG4QyzvG.7usbXVOU616pmEMoXJM2GaIdd8u6TxAo2', NULL, '2022-08-31 20:47:04', '2022-08-31 20:47:04', '123456789');
 
 -- --------------------------------------------------------
 
