@@ -27,6 +27,9 @@ Route::group(['middleware' => 'auth:admin','namespace' => 'Auth'], function (){
 Route::group(['middleware' => 'auth:sub_admins','namespace' => 'Auth'], function (){
     Route::get('my_news/','sub_admins@my_news')->name('my_news');
     Route::get('add_news/','sub_admins@add_news')->name('add_news');
+    Route::get('add_product/','sub_admins@add_product')->name('add_product');
+
+    Route::post('sub_admins/create_product/','sub_admins@create_product')->name('create_product');
     Route::post('sub_admins/create_news/','sub_admins@create_news')->name('create_news');
     Route::get('/news_delet/{id}', 'sub_admins@delet')->name('news.delet');
     Route::get('/news_edit/{id}', 'sub_admins@edit')->name('news.edit');
@@ -57,6 +60,17 @@ Route::group([], function() {
 Route::get('news/','HomeController@news')->name('news');
 Route::post('search/','HomeController@search')->name('search');
 Route::get('news_details/{id}','HomeController@news_details')->name('news_details');
+Route::get('don/{id}','HomeController@don')->name('don');
+Route::post('add_don/{id}','HomeController@add_don')->name('add_don');
 Route::post('add_commment/{id}','HomeController@add_commment')->name('add_commment');
+Route::post('create_missing_products/{id}','HomeController@create_missing_products')->name('create_missing_products');
 Route::get('commentdelet/{id}','HomeController@commentdelet')->name('comment.delet');
 
+
+
+
+
+Route::get('ajax','AjaxController@index');
+
+Route::post('dynamic_dependent/fetch', 'AjaxController@fetch')->name('dynamicdependent.fetch');
+Route::post('dynamic_dependent/fetch1', 'AjaxController@fetch1')->name('dynamicdependent.fetch1');

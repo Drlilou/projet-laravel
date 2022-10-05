@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 use App\Comment;
+use App\Don;
+use App\MissingProduct;
 use App\News;
 use App\Photo;
+use App\Product;
+use App\SubAdmin;
 use App\Zone;
 use Illuminate\Http\Request;
 use Auth;
@@ -53,8 +57,6 @@ class HomeController extends Controller
             ->orderBy('id', 'desc')
             ->paginate(4);
         return view('news')->with('data',$t)->with('paginator',$t)->with('app',$x);
-
-
     }
     public function search(Request $data)
     {
@@ -88,12 +90,13 @@ class HomeController extends Controller
            $x='layouts.app';
        //  return $x;
 
-
-
         $t= News::select('*')
             ->where('id',$id)
         ->get();
-        ;
+        $id_sub_admin =Zone::select('admin')
+            ->where('id', $t[0]->id_zone)
+            ->get();
+
       //  return $t[0];
 
        $commment=Comment::select('comments.id as id','content','users.id as userid',
@@ -105,22 +108,187 @@ class HomeController extends Controller
            ->join('users', 'users.id', '=', 'comments.user')
 
        ->get();
+       $missing_products=MissingProduct::select(
+           'product.name  as name','measruing_unit', 'product.id as idp', 'missing_products.id as idmp','Quantity'
+       )
+           ->where('news',$id)
+           ->join('product', 'product.id', '=', 'missing_products.products')
+       ->get();
+       if(Auth::guard('web')->check())
+       {
+       $don=Don::select('dons.Quantity','name','measruing_unit')
+           ->where('user',Auth::guard('web')->user()->id)
+           ->join('missing_products', 'dons.missing_products', '=', 'missing_products.id')
+           ->join('product', 'missing_products.products', '=', 'product.id')
+       ->get();}
+       if(Auth::guard('sub_admins')->check())
+       {
+       $don=Don::select('dons.Quantity','name','measruing_unit','phone','fname','lname','email')
+           ->where('news',$id)
+           ->join('missing_products', 'dons.missing_products', '=', 'missing_products.id')
+           ->join('product', 'missing_products.products', '=', 'product.id')
+           ->join('users', 'users.id', '=', 'dons.user')
+       ->get();
+ //      return $don;
+
+       }
+
+
+
 
        $photo=Photo::select("*")
            ->where("news",$id)
            ->get();
-      // return $photo;
-     //  return $commment;
-    return view('news_details')->with('data',$t[0])->with('comments',$commment)->with('photos',$photo)->with('app',$x);
+       $t1=Product::select('category')
+           ->groupby('category')
+           ->get();
+       $bol=False;
+       $t3=Product::select('category')
+           ->groupby('category')
+           ->get();
+
+
+       if(Auth::guard('web')->check())
+                 {      return view('news_details')
+                     ->with('data',$t[0])->with('comments',$commment)
+                     ->with('photos',$photo)
+                     ->with('missing_products',$missing_products)
+                     ->with('app',$x)
+                     ->with('bol',$bol)
+                     ->with('t',$t1)
+                     ->with('id_sub_admin',$id_sub_admin[0]['admin'])
+
+                     ->with('t3',$t3)
+                     ->with('don',$don);
+
+                     ;}
+       if(Auth::guard('sub_admins')->check())
+                 {      return view('news_details')
+                     ->with('data',$t[0])->with('comments',$commment)
+                     ->with('photos',$photo)
+                     ->with('missing_products',$missing_products)
+                     ->with('app',$x)
+                     ->with('bol',$bol)
+                     ->with('t',$t1)
+                     ->with('id_sub_admin',$id_sub_admin[0]['admin'])
+
+                     ->with('t3',$t3)
+                     ->with('don',$don);
+
+                     ;}
+       return view('news_details')
+           ->with('data',$t[0])->with('comments',$commment)
+           ->with('photos',$photo)
+           ->with('missing_products',$missing_products)
+           ->with('app',$x)
+           ->with('bol',$bol)
+           ->with('t',$t1)
+           ->with('id_sub_admin',$id_sub_admin[0]['admin'])
+
+           ->with('t3',$t3)
+           ;
+
     }
 
+
+   public function don($id){
+       $missing_products=MissingProduct::select(
+           'product.name  as name','measruing_unit', 'product.id as idp', 'missing_products.id as idmp','Quantity'
+       ,'missing_products.news')
+           ->where('missing_products.id',$id)
+           ->join('product', 'product.id', '=', 'missing_products.products')
+       ->get();
+       $bol=True;
+     $id= $missing_products[0]->news;
+       if(Auth::guard('sub_admins')->check())
+           $x='sub_admins.app';
+       elseif(Auth::guard('admin')->check())
+           $x='admin.app';
+       elseif (Auth::guard('web')->check())
+           $x='layouts.app';
+       else
+           $x='layouts.app';
+       //  return $x;
+
+       $t= News::select('*')
+           ->where('id',$id)
+           ->get();
+       ;
+       //  return $t[0];
+
+       $commment=Comment::select('comments.id as id','content','users.id as userid',
+           'comments.updated_at as updated_at',
+           'users.fname',
+           'users.lname'
+       )
+           ->where('news',$id)
+           ->join('users', 'users.id', '=', 'comments.user')
+
+           ->get();
+       $missing_products=MissingProduct::select(
+           'product.name  as name','measruing_unit', 'product.id as idp', 'missing_products.id as idmp','Quantity'
+       )
+           ->where('news',$id)
+           ->join('product', 'product.id', '=', 'missing_products.products')
+
+           ->get();
+       //  return $missing_products;
+
+       $photo=Photo::select("*")
+           ->where("news",$id)
+           ->get();
+       // return $photo;
+       //  return $commment;
+       $t1=Product::select('category')
+           ->groupby('category')
+           ->get();
+       return view('don')
+           ->with('data',$t[0])->with('comments',$commment)
+           ->with('photos',$photo)
+           ->with('missing_products',$missing_products)
+           ->with('app',$x)
+           ->with('bol',$bol)
+           ->with('t',$t1);}
    public function add_commment(Request $request,$id){
       // return $data;
+
        Comment::create([
            'news' => $id,
            'content' =>$request->content,
            'user' =>Auth::guard('web')->user()->id
        ]);
+
+  return  redirect('news_details/'.$id);
+    }
+   public function add_don(Request $request,$id){
+      // return $data;
+       $p= MissingProduct::select()
+           ->where('id',$id)
+           ->get();
+       Don::create([
+           'missing_products' => $id,
+           'phone' =>$request->phone,
+           'Quantity' =>$request->Quantity,
+           'user' =>Auth::guard('web')->user()->id
+       ]);
+  return  redirect('news_details/'.$p[0]->news);
+    }
+   public function create_missing_products(Request $request,$id){
+     // return $request;
+
+
+       for ($i=0;$i<$request->nb;$i++)
+       {
+           MissingProduct::create([
+               'news' => $id,
+               'products' =>$request['p'.$i],
+               'Quantity' =>$request['Quantity'.$i]
+           ]);
+
+       }
+
+
+
   return  redirect('news_details/'.$id);
     }
    public function commentdelet($id){
@@ -182,5 +350,6 @@ class HomeController extends Controller
     if(Auth::guard('sub_admins')->check())
         $user->update(['p'=>$request->get('new-password')]);
         return redirect()->back()->with("success","Password successfully changed!");
+
     }
 }

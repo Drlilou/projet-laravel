@@ -52,7 +52,9 @@ class CustomAuthController extends Controller
             ]);
 
 
-            if (Auth::guard('admin')->attempt(['username' => $request->username, 'password' => $request->password])) {
+            if (Auth::guard('admin')->attempt(['username' => $request->username,
+
+                'password' => $request->password])) {
 
                 return redirect()->intended('/admin');
 

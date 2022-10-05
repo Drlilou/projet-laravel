@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Photo;
+use App\Product;
 use App\SubAdmin;
 use App\Zone;
 use App\News;
@@ -24,8 +25,7 @@ class sub_admins extends Controller
         $this->middleware('auth:sub_admins');
     }
     public function imp($id)
-    {
-        return $id;
+    {return $id;
     }
     public function add_news()
     {
@@ -37,6 +37,17 @@ class sub_admins extends Controller
             ->where('admin',Auth::guard('sub_admins')->user()->id)
             ->get();
         return view('sub_admins.add_news')->with('c',count($x))->with('data',$data);
+    }
+    public function add_product()
+    {
+        $data=Zone::select('*')
+            ->where('admin',Auth::guard('sub_admins')->user()->id)
+            ->get();
+        $x=Zone::select('id')
+            ->orderBy('id', 'desc')
+            ->where('admin',Auth::guard('sub_admins')->user()->id)
+            ->get();
+        return view('sub_admins.add_product')->with('c',count($x))->with('data',$data);
     }
     protected function create_news(Request $request)
     {
@@ -91,6 +102,30 @@ class sub_admins extends Controller
 
         }
 
+        return redirect('/my_news');
+}
+       protected function create_product(Request $request)
+    {
+
+
+
+
+        $rules = [
+            'name' => 'required',
+            'category' => 'required',
+            'measruing_unit' => 'required',
+        ];
+        $validator = Validator::make($request->all() ,$rules);
+        if ($validator->fails()) {
+            //    return redirect()->back()->withErrors($validator)->withInput($request->all());
+            // return  $validator->errors()->first();
+            return redirect()->back()->with(["eror"=>$validator->errors()->first()]);
+        }
+        $N=Product::create([
+            'name' => $request->name,
+            'category' => $request->category,
+            'measruing_unit' => $request->measruing_unit,
+        ]);
         return redirect('/my_news');
 }
     public function my_news()

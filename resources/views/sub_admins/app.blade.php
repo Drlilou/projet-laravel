@@ -108,6 +108,10 @@
                                             <li class="header__nav-item">
                                                 <a  href="{{ route('add_news') }}"  class="header__nav-link">add_news</a>
                                             </li>
+
+                                            <li class="header__nav-item">
+                                                <a  href="{{ route('add_product') }}"  class="header__nav-link">add_product</a>
+                                            </li>
                                             <li class="header__nav-item">
                                                 <a href="{{ route('my_news') }}"  class="header__nav-link">my_news</a>
                                             </li>
