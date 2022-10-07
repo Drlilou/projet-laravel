@@ -230,14 +230,13 @@
                                                                 <th>{{$cpt}}</th>
                                                                 <td>{{$missing_product['name']}}</td>
                                                                 <td>{{$missing_product['Quantity']}} {{$missing_product['measruing_unit']}}</td>
-                                                                    @if(Auth::guard('web')->check()))
+
                                                                 <td>
                                                                     <a  href="{{route('don',$missing_product['idmp'])}}">
                                                                             <i  style="color: #20ebff;"
                                                                                 class='fa fa-handshake-o'></i>
                                                                     </a>
                                                                 </td>
-                                                                    @endif
                                                                 </tr>
                                                                 @php
                                                                     $cpt++;
@@ -467,6 +466,7 @@
                                             @if(Auth::guard('sub_admins')->check()))
                                     @if(Auth::guard('sub_admins')->user()->id==$id_sub_admin)
 
+                                        <div class="accordion__card">
 
                                     <div class="card-header" id="headingOne">
                                                 <button type="button" data-toggle="collapse"
@@ -478,7 +478,8 @@
 
                                             </div>
 
-                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+
+                                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                                 <div class="card-body">
                                                     <table class="accordion__list">
                                                         <thead>
@@ -487,9 +488,6 @@
                                                             <th>name</th>
                                                             <th>Quantity</th>
                                                             <th>phone</th>
-                                                            <th>fname</th>
-                                                            <th>lname</th>
-                                                            <th>email</th>
 
                                                         </tr>
                                                         </thead>
@@ -505,10 +503,7 @@
 
                                                                 <td>{{$d['Quantity']}} {{$d['measruing_unit']}}</td>
                                                                 <td>{{$d['phone']}}</td>
-                                                                <td>{{$d['fname']}}</td>
-                                                                <td>{{$d['lname']}}</td>
-                                                                <td>{{$d['email']}}</td>
-                                                            </tr>
+                                                         </tr>
                                                             @php
                                                                 $cpt++;
                                                             @endphp
@@ -524,7 +519,7 @@
                                                 </div>
                                             </div>
 
-
+                                        </div>
                                             @endif
                                             @endif
 

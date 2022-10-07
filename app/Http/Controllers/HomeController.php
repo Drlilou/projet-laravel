@@ -123,11 +123,10 @@ class HomeController extends Controller
        ->get();}
        if(Auth::guard('sub_admins')->check())
        {
-       $don=Don::select('dons.Quantity','name','measruing_unit','phone','fname','lname','email')
+       $don=Don::select('dons.Quantity','name','measruing_unit','phone')
            ->where('news',$id)
            ->join('missing_products', 'dons.missing_products', '=', 'missing_products.id')
            ->join('product', 'missing_products.products', '=', 'product.id')
-           ->join('users', 'users.id', '=', 'dons.user')
        ->get();
  //      return $don;
 
@@ -268,9 +267,7 @@ class HomeController extends Controller
        Don::create([
            'missing_products' => $id,
            'phone' =>$request->phone,
-           'Quantity' =>$request->Quantity,
-           'user' =>Auth::guard('web')->user()->id
-       ]);
+           'Quantity' =>$request->Quantity]);
   return  redirect('news_details/'.$p[0]->news);
     }
    public function create_missing_products(Request $request,$id){

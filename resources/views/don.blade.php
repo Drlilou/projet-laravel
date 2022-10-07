@@ -126,8 +126,8 @@
                                     <div class="comments">
 
 
-                                        @if(Auth::guard('web')->check())
-                                     {{--   route('add_don',$data['id'])}}--}}
+                                        {{--      @if(Auth::guard('web')->check()) --}}
+                                           {{--   route('add_don',$data['id'])}}--}}
                                             <form method="POST" class="form"
                                                   action="{{ route('add_don',$missing_products[0]['idmp']) }}" enctype="multipart/form-data">
                                                 @csrf
@@ -144,7 +144,7 @@
 
 
                                                     <div class="col-md-7 form-group">
-                                                    <lebel style="color:white "">Phone  : </lebel>    <input id="phone" type="number" class="form-text"
+                                                    <lebel style="color:white ">Phone  : </lebel>    <input id="phone" type="number" class="form-text"
                                                                name="phone" value="{{ old('phone') }}"
                                                                style="background: #4b4949;color: white;
     width: 287px;
@@ -156,7 +156,7 @@
                                                     </div>
 
                                                     <div class="col-md-7 form-group">
-                                                        <lebel style="color:white "">Quantity :</lebel>      <input id="Quantity" type="number"
+                                                        <lebel style="color:white ">Quantity :</lebel>      <input id="Quantity" type="number"
                                                                                    class="form-text"
                                                                name="Quantity" value="{{ old('Quantity') }}"
                                                                style="background: #4b4949;color: white;
@@ -187,7 +187,7 @@
 
                                             </form>
 
-                                        @endif
+                                  {{--      @endif --}}
 
 
                                     </div>
